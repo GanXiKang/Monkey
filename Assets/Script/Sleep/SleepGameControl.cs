@@ -19,7 +19,7 @@ public class SleepGameControl : MonoBehaviour
 
         if (isBingo)
         {
-            if (timer <= 3f)
+            if (timer <= 2f)
             {
                 keyboard();
             }
@@ -121,15 +121,15 @@ public class SleepGameControl : MonoBehaviour
     }
     void score()
     {
-        if (timer <= 1f)
+        if (timer <= 0.5f)
         {
             print("Excellent");
         }
-        else if (timer <= 2f)
+        else if (timer <= 1.2f)
         {
             print("Great!");
         }
-        else if (timer <= 3f)
+        else if (timer <= 2f)
         {
             print("Nice!");
         }
