@@ -6,13 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class MenuControl : MonoBehaviour
 {
+    AudioSource BGM;
+
     public GameObject main, ranking, setting;
     public Toggle fullScreen;
 
-    //public static bool isFullS_record;
+    public static bool isFullS_record;
 
     void Start()
     {
+        BGM = GetComponent<AudioSource>();
+
         main.SetActive(true);
         ranking.SetActive(false);
         setting.SetActive(false);
@@ -46,6 +50,6 @@ public class MenuControl : MonoBehaviour
     public void Button_FullScreen(bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
-        //isFullS_record = isFullScreen;
+        isFullS_record = isFullScreen;
     }
 }
