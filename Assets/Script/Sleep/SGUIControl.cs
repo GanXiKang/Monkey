@@ -14,7 +14,6 @@ public class SGUIControl : MonoBehaviour
         esc.SetActive(false);
     }
 
-    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -31,7 +30,6 @@ public class SGUIControl : MonoBehaviour
         esc.SetActive(false);
         Time.timeScale = 1f;
     }
-
     public void Button_Exit()
     {
         SceneManager.LoadScene(0);
