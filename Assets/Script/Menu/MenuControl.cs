@@ -21,6 +21,11 @@ public class MenuControl : MonoBehaviour
         main.SetActive(false);
         setting.SetActive(true);
     }
+    public void Button_ExitDoor()
+    {
+        setting.SetActive(false);
+        main.SetActive(true);
+    }
     public void Button_Exit()
     {
         Application.Quit();
