@@ -1,18 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RGUIControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject main, esc;
+
     void Start()
     {
-        
+        main.SetActive(true);
+        esc.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            esc.SetActive(true);
+            main.SetActive(false);
+            Time.timeScale = 0f;
+        }
+    }
+
+    public void Button_Continue()
+    {
+        main.SetActive(true);
+        esc.SetActive(false);
+        Time.timeScale = 1f;
+    }
+    public void Button_Exit()
+    {
+        SceneManager.LoadScene(0);
     }
 }
