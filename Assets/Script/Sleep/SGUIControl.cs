@@ -18,8 +18,8 @@ public class SGUIControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            esc.SetActive(false);
-            main.SetActive(true);
+            esc.SetActive(true);
+            main.SetActive(false);
             Time.timeScale = 0f;
         }
     }
