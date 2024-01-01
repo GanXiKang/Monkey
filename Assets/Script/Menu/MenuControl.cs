@@ -10,8 +10,10 @@ public class MenuControl : MonoBehaviour
 
     public GameObject main, ranking, setting;
     public Toggle fullScreen;
+    public Slider volume;
 
     public static bool isFullS_record;
+    public static float volumeNum;
 
     void Start()
     {
@@ -22,6 +24,7 @@ public class MenuControl : MonoBehaviour
         setting.SetActive(false);
 
         fullScreen.isOn = Screen.fullScreen;
+        volumeNum = 0.7f;
     }
 
     public void Button_Start()
@@ -37,6 +40,11 @@ public class MenuControl : MonoBehaviour
     {
         main.SetActive(false);
         setting.SetActive(true);
+    }
+    public void Button_Volume()
+    {
+        volumeNum = volume.value;
+        BGM.volume = volumeNum;
     }
     public void Button_ExitDoor()
     {
