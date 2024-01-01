@@ -5,12 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MenuControl : MonoBehaviour
 {
+    public GameObject main, ranking, setting;
+
     public void Button_Start()
     {
-        
+        SceneManager.LoadScene(1);
     }
     public void Button_Ranking()
-    { 
-
+    {
+        main.SetActive(false);
+        ranking.SetActive(true);
+    }
+    public void Button_Setting()
+    {
+        main.SetActive(false);
+        setting.SetActive(true);
+    }
+    public void Button_Exit()
+    {
+        Application.Quit();
     }
 }
