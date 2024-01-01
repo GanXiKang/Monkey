@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/OpeningAnim.unity
+    guid: a24e41c21c07cd5408e82169702a46dc
+  - enabled: 1
     path: Assets/Scenes/SleepGame.unity
     guid: 181fc11288a4bf6479cf52b8ce81802c
+  - enabled: 1
+    path: Assets/Scenes/CutsceneAnim.unity
+    guid: a0bfbe6917462bb4981751ce4b7f80ae
   - enabled: 1
     path: Assets/Scenes/RunGame.unity
     guid: f01ec4509f652bd4689d6b1996bc782a
