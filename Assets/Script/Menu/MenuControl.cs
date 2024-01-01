@@ -1,11 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuControl : MonoBehaviour
 {
     public GameObject main, ranking, setting;
+    public Toggle fullScreen;
+
+    //public static bool isFullS_record;
+
+    void Start()
+    {
+        main.SetActive(true);
+        ranking.SetActive(false);
+        setting.SetActive(false);
+
+        fullScreen.isOn = Screen.fullScreen;
+    }
 
     public void Button_Start()
     {
@@ -29,5 +42,10 @@ public class MenuControl : MonoBehaviour
     public void Button_Exit()
     {
         Application.Quit();
+    }
+    public void Button_FullScreen(bool isFullScreen)
+    {
+        Screen.fullScreen = isFullScreen;
+        //isFullS_record = isFullScreen;
     }
 }
