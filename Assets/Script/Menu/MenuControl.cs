@@ -25,6 +25,7 @@ public class MenuControl : MonoBehaviour
 
         fullScreen.isOn = Screen.fullScreen;
         volumeNum = 0.7f;
+        volume.value = volumeNum;
     }
 
     public void Button_Start()
@@ -46,6 +47,11 @@ public class MenuControl : MonoBehaviour
         volumeNum = volume.value;
         BGM.volume = volumeNum;
     }
+    public void Button_FullScreen(bool isFullScreen)
+    {
+        Screen.fullScreen = isFullScreen;
+        isFullS_record = isFullScreen;
+    }
     public void Button_ExitDoor()
     {
         setting.SetActive(false);
@@ -54,10 +60,5 @@ public class MenuControl : MonoBehaviour
     public void Button_Exit()
     {
         Application.Quit();
-    }
-    public void Button_FullScreen(bool isFullScreen)
-    {
-        Screen.fullScreen = isFullScreen;
-        isFullS_record = isFullScreen;
-    }
+    }   
 }
