@@ -279,8 +279,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 210623425}
-  - component: {fileID: 210623426}
   - component: {fileID: 210623427}
+  - component: {fileID: 210623426}
+  - component: {fileID: 210623428}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -318,8 +319,6 @@ MonoBehaviour:
   main: {fileID: 620946046}
   ranking: {fileID: 927150668}
   setting: {fileID: 1581709977}
-  fullScreen: {fileID: 519245695}
-  volume: {fileID: 1689860982}
 --- !u!82 &210623427
 AudioSource:
   m_ObjectHideFlags: 0
@@ -416,6 +415,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &210623428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210623424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268000915cee8484e8a7bb60175153b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullScreen: {fileID: 519245695}
+  volume: {fileID: 1689860982}
 --- !u!1 &226823555
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,8 +732,8 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 210623426}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+      - m_Target: {fileID: 210623428}
+        m_TargetAssemblyTypeName: GameSettingControl, Assembly-CSharp
         m_MethodName: Button_FullScreen
         m_Mode: 0
         m_Arguments:
@@ -2111,8 +2124,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 210623426}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+      - m_Target: {fileID: 210623428}
+        m_TargetAssemblyTypeName: GameSettingControl, Assembly-CSharp
         m_MethodName: Button_Volume
         m_Mode: 1
         m_Arguments:
