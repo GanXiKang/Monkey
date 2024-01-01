@@ -11,14 +11,13 @@ public class GameSettingControl : MonoBehaviour
     public Slider volume;
 
     public static bool isFullS_record;
-    public static float volumeNum;
+    public static float volumeNum = 0.7f;
 
     void Start()
     {
         BGM = GetComponent<AudioSource>();
 
         fullScreen.isOn = Screen.fullScreen;
-        volumeNum = 0.7f;
         volume.value = volumeNum;
     }
 
