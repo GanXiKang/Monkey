@@ -76,18 +76,15 @@ public class MonkeyControl : MonoBehaviour
             {
                 if (nowRoute != 1)
                 {
-                    print("a");
                     nowRoute--;
                     isTransposition = true;
                     isA = true;
-
                 }
             }
             if (Input.GetKeyDown(KeyCode.D))
             {
                 if (nowRoute != 3)
                 {
-                    print("d");
                     nowRoute++;
                     isTransposition = true;
                     isD = true;
@@ -95,14 +92,12 @@ public class MonkeyControl : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                print("jump");
                 verticalSpeed = jumpForce;
                 isTransposition = true;
                 isJump = true;
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
-                print("slide");
                 cc.height = 2f;
                 cc.center = Vector3.zero;
                 isTransposition = true;
