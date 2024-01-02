@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SleepGameControl : MonoBehaviour
 {
+    public static int score;
+
     int mode;
     bool isBingo, isStart;
     float timer;
@@ -72,7 +74,7 @@ public class SleepGameControl : MonoBehaviour
             case 1:
                 if (Input.GetKeyDown(KeyCode.H))
                 {
-                    score();
+                    ScoreControl();
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                 }
@@ -87,13 +89,12 @@ public class SleepGameControl : MonoBehaviour
             case 2:
                 if (Input.GetKeyDown(KeyCode.J))
                 {
-                    score();
+                    ScoreControl();
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    score();
                     print("Miss");
                     isBingo = false;
                     Invoke("RangeMode", 1f);
@@ -103,7 +104,7 @@ public class SleepGameControl : MonoBehaviour
             case 3:
                 if (Input.GetKeyDown(KeyCode.K))
                 {
-                    score();
+                    ScoreControl();
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                 }
@@ -118,7 +119,7 @@ public class SleepGameControl : MonoBehaviour
             case 4:
                 if (Input.GetKeyDown(KeyCode.L))
                 {
-                    score();
+                    ScoreControl();
                     isBingo = false;
                     RangeMode();
                 }
@@ -133,7 +134,7 @@ public class SleepGameControl : MonoBehaviour
             case 5:
                 if (Input.GetKeyDown(KeyCode.A))
                 {
-                    score();
+                    ScoreControl();
                     isBingo = false;
                     RangeMode();
                 }
@@ -148,7 +149,7 @@ public class SleepGameControl : MonoBehaviour
             case 6:
                 if (Input.GetKeyDown(KeyCode.S))
                 {
-                    score();
+                    ScoreControl();
                     isBingo = false;
                     RangeMode();
                 }
@@ -163,7 +164,7 @@ public class SleepGameControl : MonoBehaviour
             case 7:
                 if (Input.GetKeyDown(KeyCode.D))
                 {
-                    score();
+                    ScoreControl();
                     isBingo = false;
                     RangeMode();
                 }
@@ -178,7 +179,7 @@ public class SleepGameControl : MonoBehaviour
             case 8:
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    score();
+                    ScoreControl();
                     isBingo = false;
                     RangeMode();
                 }
@@ -191,19 +192,22 @@ public class SleepGameControl : MonoBehaviour
                 break;
         }
     }
-    void score()
+    void ScoreControl()
     {
         if (timer <= 0.5f)
         {
             print("Excellent");
+            score += 5;
         }
         else if (timer <= 1.2f)
         {
             print("Great!");
+            score += 3;
         }
         else if (timer <= 2f)
         {
             print("Nice!");
+            score += 1;
         }
     }
 }
