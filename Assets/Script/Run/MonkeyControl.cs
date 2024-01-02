@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MonkeyControl : MonoBehaviour
 {
+    Animator anim;
     CharacterController cc;
 
     int nowRoute;
@@ -13,7 +14,10 @@ public class MonkeyControl : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         cc = GetComponent<CharacterController>();
+
+        anim.SetBool("Run", true);
 
         nowRoute = 2;
         isTransposition = false;
