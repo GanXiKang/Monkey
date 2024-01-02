@@ -27,8 +27,8 @@ public class MonkeyControl : MonoBehaviour
         isSlide = false;
         speed = 10f;
         speedTransposition = 45f;
-        jumpForce = 10f;
-        gravity = 30f;
+        jumpForce = 15f;
+        gravity = 35f;
     }
 
     void Update()
