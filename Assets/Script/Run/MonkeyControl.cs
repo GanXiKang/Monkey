@@ -44,6 +44,7 @@ public class MonkeyControl : MonoBehaviour
             {
                 isTransposition = false;
                 isA = false;
+                anim.SetBool("RunLeft", false);
             }
         }
         if (isD)
@@ -54,6 +55,7 @@ public class MonkeyControl : MonoBehaviour
             {
                 isTransposition = false;
                 isD = false;
+                anim.SetBool("RunRight", false);
             }
         }
         if (isJump)
@@ -63,6 +65,7 @@ public class MonkeyControl : MonoBehaviour
             {
                 isTransposition = false;
                 isJump = false;
+                anim.SetBool("Jump", false);
             }
         }
         if (isSlide)
@@ -79,6 +82,7 @@ public class MonkeyControl : MonoBehaviour
                     nowRoute--;
                     isTransposition = true;
                     isA = true;
+                    anim.SetBool("RunLeft", true);
                 }
             }
             if (Input.GetKeyDown(KeyCode.D))
@@ -88,6 +92,7 @@ public class MonkeyControl : MonoBehaviour
                     nowRoute++;
                     isTransposition = true;
                     isD = true;
+                    anim.SetBool("RunRight", true);
                 }
             }
             if (Input.GetKeyDown(KeyCode.Space))
@@ -95,6 +100,7 @@ public class MonkeyControl : MonoBehaviour
                 verticalSpeed = jumpForce;
                 isTransposition = true;
                 isJump = true;
+                anim.SetBool("Jump", true);
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
@@ -102,6 +108,7 @@ public class MonkeyControl : MonoBehaviour
                 cc.center = Vector3.zero;
                 isTransposition = true;
                 isSlide = true;
+                anim.SetBool("Slide", true);
             }
         }
     }
@@ -129,5 +136,6 @@ public class MonkeyControl : MonoBehaviour
         cc.center = new Vector3(0, 0.5f, 0);
         isTransposition = false;
         isSlide = false;
+        anim.SetBool("Slide", false);
     }
 }
