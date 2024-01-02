@@ -103,7 +103,8 @@ public class MonkeyControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.S))
             {
                 print("slide");
-                cc.height = 1f;
+                cc.height = 2f;
+                cc.center = Vector3.zero;
                 isTransposition = true;
                 isSlide = true;
             }
@@ -115,7 +116,7 @@ public class MonkeyControl : MonoBehaviour
         switch (nowRoute)
         {
             case 1:
-                targetPos = new Vector3(3, transform.position.y, transform.position.z);
+                targetPos = new Vector3(-3, transform.position.y, transform.position.z);
                 break;
 
             case 2:
@@ -123,13 +124,14 @@ public class MonkeyControl : MonoBehaviour
                 break;
 
             case 3:
-                targetPos = new Vector3(-3, transform.position.y, transform.position.z);
+                targetPos = new Vector3(3, transform.position.y, transform.position.z);
                 break;
         }
     }
     void Slide()
     {
-        cc.height = 2f;
+        cc.height = 4f;
+        cc.center = new Vector3(0, 0.5f, 0);
         isTransposition = false;
         isSlide = false;
     }
