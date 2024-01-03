@@ -39,6 +39,7 @@ public class SleepGameControl : MonoBehaviour
     void RangeMode()
     {
         mode = Random.Range(1, 9);
+        keyb[mode].SetActive(true);
         switch (mode)
         {
             case 1:
@@ -210,6 +211,13 @@ public class SleepGameControl : MonoBehaviour
         {
             print("Nice!");
             score += 1;
+        }
+    }
+    void CloseKeyboard()
+    {
+        for (int i = 1; i < keyb.Length; i++)
+        {
+            keyb[i].SetActive(false); 
         }
     }
 }
