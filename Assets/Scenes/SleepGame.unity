@@ -259,6 +259,13 @@ MonoBehaviour:
   - {fileID: 1588542663}
   - {fileID: 1861455741}
   - {fileID: 476805632}
+  comment:
+  - {fileID: 0}
+  - {fileID: 349238336}
+  - {fileID: 1770648787}
+  - {fileID: 1310822176}
+  - {fileID: 887543209}
+  - {fileID: 1305014164}
 --- !u!114 &208530635
 MonoBehaviour:
   m_ObjectHideFlags: 0
