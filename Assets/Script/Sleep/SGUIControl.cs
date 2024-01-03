@@ -6,16 +6,24 @@ using UnityEngine.SceneManagement;
 
 public class SGUIControl : MonoBehaviour
 {
+    public static int barScore;
+
     public GameObject main, esc;
+    public Image power;
+
+    float barLength;
 
     void Start()
     {
+        barScore = 3;
+
         main.SetActive(true);
         esc.SetActive(false);
     }
 
     void Update()
     {
+        BarControl();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             esc.SetActive(true);
@@ -33,5 +41,12 @@ public class SGUIControl : MonoBehaviour
     public void Button_Exit()
     {
         SceneManager.LoadScene(0);
+    }
+
+    void BarControl()
+    {
+        barLength = (float)barScore / 20;
+        barLength *= 5;
+        power.rectTransform.localScale = new Vector3(barLength, 1, 1);
     }
 }
