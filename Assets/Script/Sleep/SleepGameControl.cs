@@ -6,6 +6,8 @@ public class SleepGameControl : MonoBehaviour
 {
     public static int score;
 
+    public GameObject[] keyb = new GameObject[9];
+
     int mode;
     bool isBingo, isStart;
     float timer;
