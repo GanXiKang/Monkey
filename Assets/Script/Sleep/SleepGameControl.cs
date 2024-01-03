@@ -17,7 +17,6 @@ public class SleepGameControl : MonoBehaviour
     {
         Invoke("RangeMode", 2f);
     }
-
     void Update()
     {
         timer += Time.deltaTime;
