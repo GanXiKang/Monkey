@@ -7,6 +7,7 @@ public class SleepGameControl : MonoBehaviour
     public static int score;
 
     public GameObject[] keyb = new GameObject[9];
+    public GameObject[] comment = new GameObject[6];
 
     int mode;
     bool isBingo, isStart;
@@ -30,7 +31,7 @@ public class SleepGameControl : MonoBehaviour
             else
             {
                 isBingo = false;
-                print("timeout");
+                comment[5].SetActive(true);
                 Invoke("RangeMode", 1f);
                 CloseKeyboard();
             }
@@ -39,6 +40,7 @@ public class SleepGameControl : MonoBehaviour
 
     void RangeMode()
     {
+        CloseComments();
         mode = Random.Range(1, 9);
         keyb[mode].SetActive(true);
         switch (mode)
@@ -85,7 +87,7 @@ public class SleepGameControl : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    print("Miss");
+                    comment[4].SetActive(true);
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
@@ -102,7 +104,7 @@ public class SleepGameControl : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    print("Miss");
+                    comment[4].SetActive(true);
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
@@ -119,7 +121,7 @@ public class SleepGameControl : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    print("Miss");
+                    comment[4].SetActive(true);
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
@@ -136,7 +138,7 @@ public class SleepGameControl : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    print("Miss");
+                    comment[4].SetActive(true);
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
@@ -153,7 +155,7 @@ public class SleepGameControl : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    print("Miss");
+                    comment[4].SetActive(true);
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
@@ -170,7 +172,7 @@ public class SleepGameControl : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    print("Miss");
+                    comment[4].SetActive(true);
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
@@ -187,7 +189,7 @@ public class SleepGameControl : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.F))
                 {
-                    print("Miss");
+                    comment[4].SetActive(true);
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
@@ -204,7 +206,7 @@ public class SleepGameControl : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 {
-                    print("Miss");
+                    comment[4].SetActive(true);
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
@@ -216,17 +218,17 @@ public class SleepGameControl : MonoBehaviour
     {
         if (timer <= 0.5f)
         {
-            print("Excellent");
+            comment[3].SetActive(true);
             score += 5;
         }
         else if (timer <= 1.2f)
         {
-            print("Great!");
+            comment[2].SetActive(true);
             score += 3;
         }
         else if (timer <= 2f)
         {
-            print("Nice!");
+            comment[1].SetActive(true);
             score += 1;
         }
     }
@@ -235,6 +237,13 @@ public class SleepGameControl : MonoBehaviour
         for (int i = 1; i < keyb.Length; i++)
         {
             keyb[i].SetActive(false); 
+        }
+    }
+    void CloseComments() 
+    {
+        for (int k = 1; k < comment.Length; k++)
+        {
+            comment[k].SetActive(false);
         }
     }
 }
