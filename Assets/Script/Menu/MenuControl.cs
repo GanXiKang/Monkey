@@ -31,6 +31,7 @@ public class MenuControl : MonoBehaviour
     }   
     public void Button_ExitDoor()
     {
+        ranking.SetActive(false);
         setting.SetActive(false);
         main.SetActive(true);
     }
