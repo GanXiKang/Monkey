@@ -45,6 +45,10 @@ public class SGUIControl : MonoBehaviour
 
     void BarControl()
     {
+        if (barScore > 20)
+        {
+            barScore = 20;
+        }
         barLength = (float)barScore / 20;
         barLength *= 5;
         power.rectTransform.localScale = new Vector3(barLength, 1, 1);
