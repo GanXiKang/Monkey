@@ -242,18 +242,6 @@ public class SleepGameControl : MonoBehaviour
         }
 
         SGUIControl.barScore++;
-        if (SGUIControl.barScore >= 20)
-        {
-            score += 50;
-        }
-        else if (SGUIControl.barScore >= 14)
-        {
-            score += 30;
-        }
-        else if (SGUIControl.barScore >= 7)
-        {
-            score += 10;
-        }
     }
     void CloseKeyboard()
     {
