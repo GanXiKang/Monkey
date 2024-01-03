@@ -225,7 +225,6 @@ public class SleepGameControl : MonoBehaviour
     }
     void ScoreControl()
     {
-        SGUIControl.barScore++;
         if (timer <= 0.5f)
         {
             comment[3].SetActive(true);
@@ -240,6 +239,20 @@ public class SleepGameControl : MonoBehaviour
         {
             comment[1].SetActive(true);
             score += 1;
+        }
+
+        SGUIControl.barScore++;
+        if (SGUIControl.barScore >= 20)
+        {
+            score += 50;
+        }
+        else if (SGUIControl.barScore >= 14)
+        {
+            score += 30;
+        }
+        else if (SGUIControl.barScore >= 7)
+        {
+            score += 10;
         }
     }
     void CloseKeyboard()
