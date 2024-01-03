@@ -32,6 +32,7 @@ public class SleepGameControl : MonoBehaviour
                 isBingo = false;
                 print("timeout");
                 Invoke("RangeMode", 1f);
+                CloseKeyboard();
             }
         }
     }
@@ -80,12 +81,14 @@ public class SleepGameControl : MonoBehaviour
                     ScoreControl();
                     isBingo = false;
                     Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     print("Miss");
                     isBingo = false;
                     Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 break;
 
@@ -95,12 +98,14 @@ public class SleepGameControl : MonoBehaviour
                     ScoreControl();
                     isBingo = false;
                     Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     print("Miss");
                     isBingo = false;
                     Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 break;
 
@@ -110,12 +115,14 @@ public class SleepGameControl : MonoBehaviour
                     ScoreControl();
                     isBingo = false;
                     Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     print("Miss");
                     isBingo = false;
-                    RangeMode();
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 break;
 
@@ -124,13 +131,15 @@ public class SleepGameControl : MonoBehaviour
                 {
                     ScoreControl();
                     isBingo = false;
-                    RangeMode();
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     print("Miss");
                     isBingo = false;
-                    RangeMode();
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 break;
 
@@ -139,13 +148,15 @@ public class SleepGameControl : MonoBehaviour
                 {
                     ScoreControl();
                     isBingo = false;
-                    RangeMode();
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     print("Miss");
                     isBingo = false;
-                    RangeMode();
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 break;
 
@@ -154,13 +165,15 @@ public class SleepGameControl : MonoBehaviour
                 {
                     ScoreControl();
                     isBingo = false;
-                    RangeMode();
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     print("Miss");
                     isBingo = false;
-                    RangeMode();
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 break;
 
@@ -169,13 +182,15 @@ public class SleepGameControl : MonoBehaviour
                 {
                     ScoreControl();
                     isBingo = false;
-                    RangeMode();
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.F))
                 {
                     print("Miss");
                     isBingo = false;
-                    RangeMode();
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 break;
 
@@ -184,13 +199,15 @@ public class SleepGameControl : MonoBehaviour
                 {
                     ScoreControl();
                     isBingo = false;
-                    RangeMode();
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 {
                     print("Miss");
                     isBingo = false;
-                    RangeMode();
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
                 }
                 break;
         }
