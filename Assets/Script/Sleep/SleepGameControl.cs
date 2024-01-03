@@ -16,6 +16,7 @@ public class SleepGameControl : MonoBehaviour
     void Start()
     {
         Invoke("RangeMode", 2f);
+        score = 0;
     }
     void Update()
     {

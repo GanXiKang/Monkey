@@ -10,6 +10,7 @@ public class SGUIControl : MonoBehaviour
 
     public GameObject main, esc;
     public Image power;
+    public Text gameScore;
 
     float barLength;
 
@@ -23,7 +24,10 @@ public class SGUIControl : MonoBehaviour
 
     void Update()
     {
+        gameScore.text = SleepGameControl.score.ToString();
+
         BarControl();
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             esc.SetActive(true);
