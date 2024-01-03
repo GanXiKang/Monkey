@@ -34,6 +34,7 @@ public class SleepGameControl : MonoBehaviour
                 comment[5].SetActive(true);
                 Invoke("RangeMode", 1f);
                 CloseKeyboard();
+                SGUIControl.barScore -= 2;
             }
         }
     }
@@ -91,6 +92,7 @@ public class SleepGameControl : MonoBehaviour
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
+                    SGUIControl.barScore--;
                 }
                 break;
 
@@ -108,6 +110,7 @@ public class SleepGameControl : MonoBehaviour
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
+                    SGUIControl.barScore--;
                 }
                 break;
 
@@ -125,6 +128,7 @@ public class SleepGameControl : MonoBehaviour
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
+                    SGUIControl.barScore--;
                 }
                 break;
 
@@ -142,6 +146,7 @@ public class SleepGameControl : MonoBehaviour
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
+                    SGUIControl.barScore--;
                 }
                 break;
 
@@ -159,6 +164,7 @@ public class SleepGameControl : MonoBehaviour
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
+                    SGUIControl.barScore--;
                 }
                 break;
 
@@ -176,6 +182,7 @@ public class SleepGameControl : MonoBehaviour
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
+                    SGUIControl.barScore--;
                 }
                 break;
 
@@ -193,6 +200,7 @@ public class SleepGameControl : MonoBehaviour
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
+                    SGUIControl.barScore--;
                 }
                 break;
 
@@ -202,7 +210,7 @@ public class SleepGameControl : MonoBehaviour
                     ScoreControl();
                     isBingo = false;
                     Invoke("RangeMode", 1f);
-                    CloseKeyboard();
+                    CloseKeyboard(); 
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 {
@@ -210,12 +218,14 @@ public class SleepGameControl : MonoBehaviour
                     isBingo = false;
                     Invoke("RangeMode", 1f);
                     CloseKeyboard();
+                    SGUIControl.barScore--;
                 }
                 break;
         }
     }
     void ScoreControl()
     {
+        SGUIControl.barScore++;
         if (timer <= 0.5f)
         {
             comment[3].SetActive(true);
