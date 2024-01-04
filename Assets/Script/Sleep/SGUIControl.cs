@@ -49,6 +49,7 @@ public class SGUIControl : MonoBehaviour
     public void Button_Again()
     {
         SceneManager.LoadScene(2);
+        BGM.PlayOneShot(button);
     }
     public void Button_Continue()
     {
