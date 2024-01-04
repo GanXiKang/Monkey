@@ -12,7 +12,7 @@ public class SGUIControl : MonoBehaviour
     public static bool isLose;
 
     public AudioClip button;
-    public GameObject main, esc, lose;
+    public GameObject main, esc;
     public Image power, knob;
 
     float barLength;
@@ -25,7 +25,6 @@ public class SGUIControl : MonoBehaviour
 
         main.SetActive(true);
         esc.SetActive(false);
-        lose.SetActive(false);
     }
 
     void Update()
@@ -42,15 +41,10 @@ public class SGUIControl : MonoBehaviour
 
         if (isLose)
         {
-            lose.SetActive(true);
+            SceneManager.LoadScene(6);
         }
     }
 
-    public void Button_Again()
-    {
-        SceneManager.LoadScene(2);
-        BGM.PlayOneShot(button);
-    }
     public void Button_Continue()
     {
         main.SetActive(true);
