@@ -51,10 +51,20 @@ public class SGUIControl : MonoBehaviour
 
     void BarControl()
     {
-        if (barScore > 20)
+        if (barScore < 7)
+        {
+            power.color = Color.red;
+        }
+        if (barScore >= 7 && barScore < 20)
+        {
+            power.color = Color.green;
+        }
+        if (barScore >= 20)
         {
             barScore = 20;
+            power.color = Color.blue;
         }
+
         barLength = (float)barScore / 20;
         barLength *= 5;
         power.rectTransform.localScale = new Vector3(barLength, 1, 1);
