@@ -10,7 +10,7 @@ public class SleepGameControl : MonoBehaviour
     public GameObject[] comment = new GameObject[6];
 
     int mode;
-    bool isBingo, isStart;
+    bool isBingo;
     float timer;
 
     void Start()
