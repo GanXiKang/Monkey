@@ -9,6 +9,7 @@ public class SGUIControl : MonoBehaviour
     AudioSource BGM;
 
     public static int barScore;
+    public static bool isLose;
 
     public AudioClip button;
     public GameObject main, esc, lose;
@@ -20,6 +21,7 @@ public class SGUIControl : MonoBehaviour
     void Start()
     {
         barScore = 3;
+        isLose = false;
 
         main.SetActive(true);
         esc.SetActive(false);
@@ -36,6 +38,11 @@ public class SGUIControl : MonoBehaviour
             esc.SetActive(true);
             main.SetActive(false);
             Time.timeScale = 0f;
+        }
+
+        if (isLose)
+        {
+            lose.SetActive(true);
         }
     }
 
