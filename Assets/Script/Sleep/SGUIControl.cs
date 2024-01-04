@@ -41,7 +41,7 @@ public class SGUIControl : MonoBehaviour
 
         if (isLose)
         {
-            SceneManager.LoadScene(6);
+            Invoke("GameLose", 1f);
         }
     }
 
@@ -82,5 +82,9 @@ public class SGUIControl : MonoBehaviour
     {
         knobFill = (float)SleepGameControl.gameTime / 60;
         knob.fillAmount = knobFill;
+    }
+    void GameLose()
+    {
+        SceneManager.LoadScene(6);
     }
 }
