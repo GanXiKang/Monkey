@@ -21,6 +21,7 @@ public class SleepGameControl : MonoBehaviour
         trueNum = 0;
         combo = trueNum;
         gameTime = 60f;
+        teacherAngry = 0;
     }
     void Update()
     {
@@ -37,11 +38,10 @@ public class SleepGameControl : MonoBehaviour
                 }
                 else
                 {
-                    isBingo = false;
                     comment[5].SetActive(true);
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                     SGUIControl.barScore -= 2;
+                    teacherAngry++;
                 }
             }
         }
@@ -97,6 +97,7 @@ public class SleepGameControl : MonoBehaviour
                     comment[4].SetActive(true);
                     CloseKeyboard();
                     SGUIControl.barScore--;
+                    teacherAngry++;
                 }
                 break;
 
@@ -111,6 +112,7 @@ public class SleepGameControl : MonoBehaviour
                     comment[4].SetActive(true);
                     CloseKeyboard();
                     SGUIControl.barScore--;
+                    teacherAngry++;
                 }
                 break;
 
@@ -125,6 +127,7 @@ public class SleepGameControl : MonoBehaviour
                     comment[4].SetActive(true);
                     CloseKeyboard();
                     SGUIControl.barScore--;
+                    teacherAngry++;
                 }
                 break;
 
@@ -139,6 +142,7 @@ public class SleepGameControl : MonoBehaviour
                     comment[4].SetActive(true);
                     CloseKeyboard();
                     SGUIControl.barScore--;
+                    teacherAngry++;
                 }
                 break;
 
@@ -153,6 +157,7 @@ public class SleepGameControl : MonoBehaviour
                     comment[4].SetActive(true);
                     CloseKeyboard();
                     SGUIControl.barScore--;
+                    teacherAngry++;
                 }
                 break;
 
@@ -167,6 +172,7 @@ public class SleepGameControl : MonoBehaviour
                     comment[4].SetActive(true);
                     CloseKeyboard();
                     SGUIControl.barScore--;
+                    teacherAngry++;
                 }
                 break;
 
@@ -181,6 +187,7 @@ public class SleepGameControl : MonoBehaviour
                     comment[4].SetActive(true);
                     CloseKeyboard();
                     SGUIControl.barScore--;
+                    teacherAngry++;
                 }
                 break;
 
@@ -195,6 +202,7 @@ public class SleepGameControl : MonoBehaviour
                     comment[4].SetActive(true);
                     CloseKeyboard();
                     SGUIControl.barScore--;
+                    teacherAngry++;
                 }
                 break;
         }
