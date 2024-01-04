@@ -92,7 +92,6 @@ public class SleepGameControl : MonoBehaviour
         if (trueNum > combo)
         {
             combo = trueNum;
-            print(combo);
         }
     }
 
