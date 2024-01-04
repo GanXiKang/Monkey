@@ -278,6 +278,7 @@ MonoBehaviour:
   main: {fileID: 1737550934}
   esc: {fileID: 463165061}
   power: {fileID: 1490029672}
+  knob: {fileID: 430600632}
 --- !u!82 &208530636
 AudioSource:
   m_ObjectHideFlags: 0
