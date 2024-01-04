@@ -53,6 +53,7 @@ public class SleepGameControl : MonoBehaviour
                             {
                                 comment[5].SetActive(true);
                                 CloseKeyboard();
+                                trueNum = 0;
                                 SGUIControl.barScore -= 2;
                                 teacherAngry++;
                                 BGM.PlayOneShot(awake);
@@ -86,6 +87,12 @@ public class SleepGameControl : MonoBehaviour
                     BGM.PlayOneShot(angry);
                 }
             }
+        }
+
+        if (trueNum > combo)
+        {
+            combo = trueNum;
+            print("combo");
         }
     }
 
@@ -237,6 +244,7 @@ public class SleepGameControl : MonoBehaviour
             score += 1;
         }
 
+        trueNum++;
         SGUIControl.barScore++;
         BGM.PlayOneShot(correct);
     }
@@ -244,6 +252,7 @@ public class SleepGameControl : MonoBehaviour
     {
         CloseKeyboard();
         comment[4].SetActive(true);
+        trueNum = 0;
         SGUIControl.barScore--;
         teacherAngry++;
         BGM.PlayOneShot(miss);
