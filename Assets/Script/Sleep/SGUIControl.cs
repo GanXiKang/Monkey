@@ -38,6 +38,10 @@ public class SGUIControl : MonoBehaviour
         }
     }
 
+    public void Button_Again()
+    {
+        SceneManager.LoadScene(2);
+    }
     public void Button_Continue()
     {
         main.SetActive(true);
