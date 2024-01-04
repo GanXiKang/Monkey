@@ -10,7 +10,7 @@ public class SleepGameControl : MonoBehaviour
     public GameObject[] keyb = new GameObject[9];
     public GameObject[] comment = new GameObject[6];
 
-    int mode, trueNum;
+    int mode, trueNum, teacherAngry;
     bool isBingo;
     float timer;
 
@@ -27,7 +27,7 @@ public class SleepGameControl : MonoBehaviour
         timer += Time.deltaTime;
         gameTime -= Time.deltaTime;
 
-        if (gameTime > 0)
+        if (gameTime > 0 && !SGUIControl.isLose)
         {
             if (isBingo)
             {
@@ -90,15 +90,11 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.H))
                 {
                     ScoreControl();
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     comment[4].SetActive(true);
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                     SGUIControl.barScore--;
                 }
@@ -108,15 +104,11 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.J))
                 {
                     ScoreControl();
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     comment[4].SetActive(true);
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                     SGUIControl.barScore--;
                 }
@@ -126,15 +118,11 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.K))
                 {
                     ScoreControl();
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     comment[4].SetActive(true);
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                     SGUIControl.barScore--;
                 }
@@ -144,15 +132,11 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.L))
                 {
                     ScoreControl();
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     comment[4].SetActive(true);
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                     SGUIControl.barScore--;
                 }
@@ -162,15 +146,11 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.A))
                 {
                     ScoreControl();
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     comment[4].SetActive(true);
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                     SGUIControl.barScore--;
                 }
@@ -180,15 +160,11 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.S))
                 {
                     ScoreControl();
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
                     comment[4].SetActive(true);
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                     SGUIControl.barScore--;
                 }
@@ -198,15 +174,11 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.D))
                 {
                     ScoreControl();
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.F))
                 {
                     comment[4].SetActive(true);
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                     SGUIControl.barScore--;
                 }
@@ -216,15 +188,11 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     ScoreControl();
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard(); 
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 {
                     comment[4].SetActive(true);
-                    isBingo = false;
-                    Invoke("RangeMode", 1f);
                     CloseKeyboard();
                     SGUIControl.barScore--;
                 }
@@ -253,6 +221,8 @@ public class SleepGameControl : MonoBehaviour
     }
     void CloseKeyboard()
     {
+        isBingo = false;
+        Invoke("RangeMode", 1f);
         for (int i = 1; i < keyb.Length; i++)
         {
             keyb[i].SetActive(false); 
