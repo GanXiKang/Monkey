@@ -7,11 +7,12 @@ public class GameSettingControl : MonoBehaviour
 {
     AudioSource BGM;
 
+    public AudioClip button;
     public Toggle fullScreen;
     public Slider volume;
 
     public static bool isFullS_record;
-    public static float volumeNum = 0.7f;
+    public static float volumeNum = 0.5f;
 
     void Start()
     {
@@ -30,5 +31,6 @@ public class GameSettingControl : MonoBehaviour
     {
         Screen.fullScreen = isFullScreen;
         isFullS_record = isFullScreen;
+        BGM.PlayOneShot(button);
     }
 }
