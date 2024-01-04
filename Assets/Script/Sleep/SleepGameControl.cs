@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SleepGameControl : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class SleepGameControl : MonoBehaviour
     public GameObject[] comment = new GameObject[6];
 
     int mode, trueNum, teacherAngry;
-    bool isBingo;
+    bool isBingo, isEnd;
     float timer;
 
     void Start()
@@ -22,26 +23,58 @@ public class SleepGameControl : MonoBehaviour
         combo = trueNum;
         gameTime = 60f;
         teacherAngry = 0;
+        isEnd = false;
     }
     void Update()
     {
         timer += Time.deltaTime;
         gameTime -= Time.deltaTime;
 
-        if (gameTime > 0 && !SGUIControl.isLose)
+        if (!SGUIControl.isLose)
         {
-            if (isBingo)
+            if (gameTime > 0)
             {
-                if (timer <= 2f)
+                if (SGUIControl.barScore > 0)
                 {
-                    keyboard();
+                    if (teacherAngry < 5)
+                    {
+                        if (isBingo)
+                        {
+                            if (timer <= 2f)
+                            {
+                                keyboard();
+                            }
+                            else
+                            {
+                                comment[5].SetActive(true);
+                                CloseKeyboard();
+                                SGUIControl.barScore -= 2;
+                                teacherAngry++;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        SGUIControl.isLose = true;
+                    }
                 }
                 else
                 {
-                    comment[5].SetActive(true);
-                    CloseKeyboard();
-                    SGUIControl.barScore -= 2;
-                    teacherAngry++;
+                    SGUIControl.isLose = true;
+                }
+            }
+            else
+            {
+                if (SGUIControl.barScore >= 7)
+                {
+                    if (!isEnd)
+                    {
+                        StartCoroutine(NextScene());
+                    }
+                }
+                else
+                {
+                    SGUIControl.isLose = true;
                 }
             }
         }
@@ -242,5 +275,24 @@ public class SleepGameControl : MonoBehaviour
         {
             comment[k].SetActive(false);
         }
+    }
+
+    IEnumerator NextScene()
+    {
+        isEnd = true;
+        if (SGUIControl.barScore >= 20)
+        {
+            score += 50;
+        }
+        else if(SGUIControl.barScore >= 14)
+        {
+            score += 30;
+        }
+        else if (SGUIControl.barScore >= 7)
+        {
+            score += 10;
+        }
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(3);
     }
 }
