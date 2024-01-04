@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SleepGameControl : MonoBehaviour
 {
-    public static int score;
+    public static int score, combo;
 
     public GameObject[] keyb = new GameObject[9];
     public GameObject[] comment = new GameObject[6];
 
-    int mode;
+    int mode, trueNum;
     bool isBingo;
     float timer;
 
@@ -17,6 +17,8 @@ public class SleepGameControl : MonoBehaviour
     {
         Invoke("RangeMode", 2f);
         score = 0;
+        trueNum = 0;
+        combo = trueNum;
     }
     void Update()
     {
