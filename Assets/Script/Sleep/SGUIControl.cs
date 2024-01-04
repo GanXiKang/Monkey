@@ -15,6 +15,7 @@ public class SGUIControl : MonoBehaviour
     public Image power, knob;
 
     float barLength;
+    float knobFill;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class SGUIControl : MonoBehaviour
     void Update()
     {
         BarControl();
+        TimeControl();
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -68,5 +70,10 @@ public class SGUIControl : MonoBehaviour
         barLength = (float)barScore / 20;
         barLength *= 5;
         power.rectTransform.localScale = new Vector3(barLength, 1, 1);
+    }
+    void TimeControl()
+    {
+        knobFill = (float)SleepGameControl.gameTime / 60;
+        knob.fillAmount = knobFill;
     }
 }
