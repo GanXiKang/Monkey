@@ -12,7 +12,7 @@ public class SGUIControl : MonoBehaviour
 
     public AudioClip button;
     public GameObject main, esc;
-    public Image power;
+    public Image power, knob;
 
     float barLength;
 
