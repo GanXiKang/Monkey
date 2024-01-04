@@ -265,6 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 119333562}
   - component: {fileID: 119333561}
+  - component: {fileID: 119333563}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -383,6 +384,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &119333563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119333559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5be44ac25663fd45a8f523e52a3700e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 8300000, guid: a028088ee9006d3418d4911d777f12e6, type: 3}
 --- !u!1 &119734634
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,8 +842,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SGUIControl, Assembly-CSharp
+      - m_Target: {fileID: 119333563}
+        m_TargetAssemblyTypeName: LoseControl, Assembly-CSharp
         m_MethodName: Button_Again
         m_Mode: 1
         m_Arguments:
