@@ -277,6 +277,7 @@ MonoBehaviour:
   button: {fileID: 8300000, guid: a028088ee9006d3418d4911d777f12e6, type: 3}
   main: {fileID: 1737550934}
   esc: {fileID: 463165061}
+  lose: {fileID: 1518117535}
   power: {fileID: 1490029672}
   knob: {fileID: 430600632}
 --- !u!82 &208530636
