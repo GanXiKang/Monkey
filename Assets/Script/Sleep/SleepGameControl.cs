@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class SleepGameControl : MonoBehaviour
 {
+    AudioSource BGM;
+
     public static int score, combo;
     public static float gameTime;
 
     public GameObject[] keyb = new GameObject[9];
     public GameObject[] comment = new GameObject[6];
+    public AudioClip correct, miss, angry, awake;
 
     int mode, trueNum, teacherAngry;
     bool isBingo, isEnd;
@@ -17,6 +20,8 @@ public class SleepGameControl : MonoBehaviour
 
     void Start()
     {
+        BGM = GetComponent<AudioSource>();
+
         Invoke("RangeMode", 2f);
         score = 0;
         trueNum = 0;
@@ -50,17 +55,20 @@ public class SleepGameControl : MonoBehaviour
                                 CloseKeyboard();
                                 SGUIControl.barScore -= 2;
                                 teacherAngry++;
+                                BGM.PlayOneShot(awake);
                             }
                         }
                     }
                     else
                     {
                         SGUIControl.isLose = true;
+                        BGM.PlayOneShot(angry);
                     }
                 }
                 else
                 {
                     SGUIControl.isLose = true;
+                    BGM.PlayOneShot(angry);
                 }
             }
             else
@@ -75,6 +83,7 @@ public class SleepGameControl : MonoBehaviour
                 else
                 {
                     SGUIControl.isLose = true;
+                    BGM.PlayOneShot(angry);
                 }
             }
         }
@@ -123,14 +132,10 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.H))
                 {
                     ScoreControl();
-                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    comment[4].SetActive(true);
-                    CloseKeyboard();
-                    SGUIControl.barScore--;
-                    teacherAngry++;
+                    MissControl();
                 }
                 break;
 
@@ -138,14 +143,10 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.J))
                 {
                     ScoreControl();
-                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    comment[4].SetActive(true);
-                    CloseKeyboard();
-                    SGUIControl.barScore--;
-                    teacherAngry++;
+                    MissControl();
                 }
                 break;
 
@@ -153,14 +154,10 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.K))
                 {
                     ScoreControl();
-                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    comment[4].SetActive(true);
-                    CloseKeyboard();
-                    SGUIControl.barScore--;
-                    teacherAngry++;
+                    MissControl();
                 }
                 break;
 
@@ -168,14 +165,10 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.L))
                 {
                     ScoreControl();
-                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    comment[4].SetActive(true);
-                    CloseKeyboard();
-                    SGUIControl.barScore--;
-                    teacherAngry++;
+                    MissControl();
                 }
                 break;
 
@@ -183,14 +176,10 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.A))
                 {
                     ScoreControl();
-                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    comment[4].SetActive(true);
-                    CloseKeyboard();
-                    SGUIControl.barScore--;
-                    teacherAngry++;
+                    MissControl();
                 }
                 break;
 
@@ -198,14 +187,10 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.S))
                 {
                     ScoreControl();
-                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.F))
                 {
-                    comment[4].SetActive(true);
-                    CloseKeyboard();
-                    SGUIControl.barScore--;
-                    teacherAngry++;
+                    MissControl();
                 }
                 break;
 
@@ -213,14 +198,10 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.D))
                 {
                     ScoreControl();
-                    CloseKeyboard();
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.F))
                 {
-                    comment[4].SetActive(true);
-                    CloseKeyboard();
-                    SGUIControl.barScore--;
-                    teacherAngry++;
+                    MissControl();
                 }
                 break;
 
@@ -228,20 +209,18 @@ public class SleepGameControl : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     ScoreControl();
-                    CloseKeyboard(); 
                 }
                 if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.J) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 {
-                    comment[4].SetActive(true);
-                    CloseKeyboard();
-                    SGUIControl.barScore--;
-                    teacherAngry++;
+                    MissControl();
                 }
                 break;
         }
     }
     void ScoreControl()
     {
+        CloseKeyboard();
+
         if (timer <= 0.5f)
         {
             comment[3].SetActive(true);
@@ -259,6 +238,15 @@ public class SleepGameControl : MonoBehaviour
         }
 
         SGUIControl.barScore++;
+        BGM.PlayOneShot(correct);
+    }
+    void MissControl()
+    {
+        CloseKeyboard();
+        comment[4].SetActive(true);
+        SGUIControl.barScore--;
+        teacherAngry++;
+        BGM.PlayOneShot(miss);
     }
     void CloseKeyboard()
     {
