@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6ac6997eb371e34abdba553f06c61a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 8300000, guid: a028088ee9006d3418d4911d777f12e6, type: 3}
   main: {fileID: 1737550934}
   esc: {fileID: 463165061}
   power: {fileID: 1490029672}
@@ -390,6 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268000915cee8484e8a7bb60175153b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 8300000, guid: a028088ee9006d3418d4911d777f12e6, type: 3}
   fullScreen: {fileID: 1441202452}
   volume: {fileID: 1360739872}
 --- !u!1 &349238336
