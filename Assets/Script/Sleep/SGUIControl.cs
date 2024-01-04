@@ -11,7 +11,7 @@ public class SGUIControl : MonoBehaviour
     public static int barScore;
 
     public AudioClip button;
-    public GameObject main, esc;
+    public GameObject main, esc, lose;
     public Image power, knob;
 
     float barLength;
@@ -23,6 +23,7 @@ public class SGUIControl : MonoBehaviour
 
         main.SetActive(true);
         esc.SetActive(false);
+        lose.SetActive(false);
     }
 
     void Update()
