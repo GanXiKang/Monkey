@@ -101,33 +101,6 @@ public class SleepGameControl : MonoBehaviour
         CloseComments();
         mode = Random.Range(1, 9);
         keyb[mode].SetActive(true);
-        switch (mode)
-        {
-            case 1:
-                print("H");
-                break;
-            case 2:
-                print("J");
-                break;
-            case 3:
-                print("K");
-                break;
-            case 4:
-                print("L");
-                break;
-            case 5:
-                print("A");
-                break;
-            case 6:
-                print("S");
-                break;
-            case 7:
-                print("D");
-                break;
-            case 8:
-                print("F");
-                break;
-        }
         isBingo = true;
         timer = 0;
     }
