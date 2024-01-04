@@ -262,6 +262,10 @@ MonoBehaviour:
   - {fileID: 1310822176}
   - {fileID: 887543209}
   - {fileID: 1305014164}
+  correct: {fileID: 8300000, guid: e3efa9ae3dd19584885108f73415f010, type: 3}
+  miss: {fileID: 8300000, guid: eb1464ff8ca7c314f90a8dcefac56f9b, type: 3}
+  angry: {fileID: 8300000, guid: 94bcb3215b033cd4ebf5d7ff09ca1390, type: 3}
+  awake: {fileID: 8300000, guid: 1b9b4dd5dd77f404b99b905af63b0e9e, type: 3}
 --- !u!114 &208530635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,7 +295,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7807a0ab6fc6796488ee3ea2fbd41dc4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.11
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
