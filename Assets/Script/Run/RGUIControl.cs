@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class RGUIControl : MonoBehaviour
 {
+    AudioSource BGM;
+
+    public AudioClip button;
     public GameObject main, esc;
 
     void Start()
@@ -29,9 +32,11 @@ public class RGUIControl : MonoBehaviour
         main.SetActive(true);
         esc.SetActive(false);
         Time.timeScale = 1f;
+        BGM.PlayOneShot(button);
     }
     public void Button_Exit()
     {
         SceneManager.LoadScene(0);
+        BGM.PlayOneShot(button);
     }
 }

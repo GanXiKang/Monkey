@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class SGUIControl : MonoBehaviour
 {
+    AudioSource BGM;
+
     public static int barScore;
 
+    public AudioClip button;
     public GameObject main, esc;
     public Image power;
     public Text gameScore;
@@ -41,10 +44,12 @@ public class SGUIControl : MonoBehaviour
         main.SetActive(true);
         esc.SetActive(false);
         Time.timeScale = 1f;
+        BGM.PlayOneShot(button);
     }
     public void Button_Exit()
     {
         SceneManager.LoadScene(0);
+        BGM.PlayOneShot(button);
     }
 
     void BarControl()
