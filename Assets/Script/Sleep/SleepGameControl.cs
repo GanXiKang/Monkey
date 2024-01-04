@@ -5,6 +5,7 @@ using UnityEngine;
 public class SleepGameControl : MonoBehaviour
 {
     public static int score, combo;
+    public static float gameTime;
 
     public GameObject[] keyb = new GameObject[9];
     public GameObject[] comment = new GameObject[6];
@@ -19,24 +20,29 @@ public class SleepGameControl : MonoBehaviour
         score = 0;
         trueNum = 0;
         combo = trueNum;
+        gameTime = 60f;
     }
     void Update()
     {
         timer += Time.deltaTime;
+        gameTime -= Time.deltaTime;
 
-        if (isBingo)
+        if (gameTime > 0)
         {
-            if (timer <= 2f)
+            if (isBingo)
             {
-                keyboard();
-            }
-            else
-            {
-                isBingo = false;
-                comment[5].SetActive(true);
-                Invoke("RangeMode", 1f);
-                CloseKeyboard();
-                SGUIControl.barScore -= 2;
+                if (timer <= 2f)
+                {
+                    keyboard();
+                }
+                else
+                {
+                    isBingo = false;
+                    comment[5].SetActive(true);
+                    Invoke("RangeMode", 1f);
+                    CloseKeyboard();
+                    SGUIControl.barScore -= 2;
+                }
             }
         }
     }
