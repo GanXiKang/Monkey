@@ -16,6 +16,7 @@ public class ObstaclesControl : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
+        print("hi");
         if (other.gameObject.name == "MonkeyStudent")
         {
             print("ok");
