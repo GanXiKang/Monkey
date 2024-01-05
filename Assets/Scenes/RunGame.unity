@@ -637,6 +637,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 687359178}
   m_CullTransparentMesh: 1
+--- !u!1 &805922147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6313548167751774789, guid: 372ba6c3a9320d34296140752719008d, type: 3}
+  m_PrefabInstance: {fileID: 1719735696442317398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &805922152
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805922147}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0.5}
 --- !u!1 &927638799
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,7 +1766,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.020038351, y: 0.021113355, z: 0.02}
+  m_Size: {x: 0.025, y: 0.025, z: 0.025}
   m_Center: {x: 0.0000017448328, y: 0.00029001103, z: 0}
 --- !u!114 &2070040105
 MonoBehaviour:
@@ -1835,13 +1863,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 340838453497057248, guid: 372ba6c3a9320d34296140752719008d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 340838453497057248, guid: 372ba6c3a9320d34296140752719008d, type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: -0.020904757
+      objectReference: {fileID: 0}
+    - target: {fileID: 340838453497057248, guid: 372ba6c3a9320d34296140752719008d, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.0287591
+      objectReference: {fileID: 0}
     - target: {fileID: 3934579575790035896, guid: 372ba6c3a9320d34296140752719008d, type: 3}
       propertyPath: m_Center.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3934579575790035896, guid: 372ba6c3a9320d34296140752719008d, type: 3}
       propertyPath: m_Center.z
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6313548167751774789, guid: 372ba6c3a9320d34296140752719008d, type: 3}
       propertyPath: m_Name
@@ -1890,7 +1930,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6313548167751774789, guid: 372ba6c3a9320d34296140752719008d, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 805922152}
   m_SourcePrefab: {fileID: 100100000, guid: 372ba6c3a9320d34296140752719008d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
