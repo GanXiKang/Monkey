@@ -14,10 +14,9 @@ public class ObstaclesControl : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        print("hi");
-        if (other.gameObject.name == "MonkeyStudent")
+        if (other.tag == "Player")
         {
             print("ok");
         }
