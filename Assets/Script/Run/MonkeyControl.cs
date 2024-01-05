@@ -33,7 +33,7 @@ public class MonkeyControl : MonoBehaviour
 
     void Update()
     {
-        Vector3 moveDirection = new Vector3(0, verticalSpeed, -speed);
+        Vector3 moveDirection = new Vector3(0, verticalSpeed, speed);
         cc.Move(moveDirection * Time.deltaTime);
 
         if (isA)
