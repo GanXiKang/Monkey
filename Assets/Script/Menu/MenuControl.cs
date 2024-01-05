@@ -11,12 +11,23 @@ public class MenuControl : MonoBehaviour
     public AudioClip button;
     public GameObject main, ranking, setting;
 
+    public static bool isRanking = false;
+
     void Start()
     {
         BGM = GetComponent<AudioSource>();
 
-        main.SetActive(true);
-        ranking.SetActive(false);
+        if (!isRanking)
+        {
+            main.SetActive(true);
+            ranking.SetActive(false);
+        }
+        else
+        {
+            ranking.SetActive(true);
+            main.SetActive(false);
+            isRanking = false;
+        }
         setting.SetActive(false);
     }
 

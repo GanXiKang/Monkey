@@ -20,7 +20,7 @@ public class EndGameControl : MonoBehaviour
     }
     public void Button_Ranking()
     {
-
+        MenuControl.isRanking = true;
         SceneManager.LoadScene(0);
     }
 }
