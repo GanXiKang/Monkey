@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EndGameControl : MonoBehaviour
-{ 
+{
+    public Text combo, score;
+
     void Start()
     {
-        
+        combo.text = SleepGameControl.combo.ToString();
     }
     void Update()
     {
