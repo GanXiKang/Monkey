@@ -205,8 +205,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
+      - m_Target: {fileID: 578332607}
+        m_TargetAssemblyTypeName: EndGameControl, Assembly-CSharp
         m_MethodName: Button_Ranking
         m_Mode: 1
         m_Arguments:
@@ -397,6 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 578332605}
   - component: {fileID: 578332606}
+  - component: {fileID: 578332607}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -515,6 +516,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &578332607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578332604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a39312ee6960b4aa19768c7f939dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1617098608
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,9 +787,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: Button_Exit
+      - m_Target: {fileID: 578332607}
+        m_TargetAssemblyTypeName: EndGameControl, Assembly-CSharp
+        m_MethodName: Button_OK
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
