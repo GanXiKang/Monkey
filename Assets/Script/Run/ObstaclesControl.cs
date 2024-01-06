@@ -7,16 +7,6 @@ public class ObstaclesControl : MonoBehaviour
     public AudioSource BGM;
     public AudioClip coll;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
