@@ -7,6 +7,7 @@ public class MonkeyControl : MonoBehaviour
 {
     Animator anim;
     CharacterController cc;
+    CapsuleCollider capC;
 
     int nowRoute;
     bool isTransposition, isA, isD, isJump, isSlide;
@@ -24,6 +25,7 @@ public class MonkeyControl : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         cc = GetComponent<CharacterController>();
+        capC = GetComponent<CapsuleCollider>();
 
         anim.SetBool("Run", true);
 
@@ -121,6 +123,8 @@ public class MonkeyControl : MonoBehaviour
                 {
                     cc.height = 2f;
                     cc.center = Vector3.zero;
+                    capC.height = 2f;
+                    capC.center = Vector3.zero;
                     isTransposition = true;
                     isSlide = true;
                     anim.SetBool("Slide", true);
@@ -157,6 +161,8 @@ public class MonkeyControl : MonoBehaviour
     {
         cc.height = 4f;
         cc.center = new Vector3(0, 0.5f, 0);
+        capC.height = 4f;
+        capC.center = new Vector3(0, 0.5f, 0);
         isTransposition = false;
         isSlide = false;
         anim.SetBool("Slide", false);
