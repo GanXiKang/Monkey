@@ -47,7 +47,7 @@ public class MonkeyControl : MonoBehaviour
     {
         if (!isGameOver)
         {
-            score += Time.deltaTime;
+            score += Time.deltaTime * 10;
 
             Vector3 moveDirection = new Vector3(0, verticalSpeed, speed);
             cc.Move(moveDirection * Time.deltaTime);
