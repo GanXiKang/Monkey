@@ -8,6 +8,8 @@ public class StudentControl : MonoBehaviour
 
     public static bool isFright;
 
+    public GameObject effect;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -21,14 +23,21 @@ public class StudentControl : MonoBehaviour
 
     void Update()
     {
+        if (SGUIControl.isLose)
+        {
+            isFright = true;
+        }
+
         if (isFright)
         {
             anim.SetBool("Frightened", true);
             isFright = false;
+            effect.SetActive(false);
         }
         else
         {
             anim.SetBool("Frightened", false);
+            effect.SetActive(true);
         }
     }
 }

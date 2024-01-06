@@ -28,6 +28,7 @@ public class TeacherControl : MonoBehaviour
 
         if (SGUIControl.isLose)
         {
+            effect.SetActive(true);
             anim.SetBool("T_IdleSitting", false);
             anim.SetBool("T_Angry", true);
         }
