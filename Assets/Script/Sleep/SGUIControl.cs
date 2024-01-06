@@ -41,7 +41,7 @@ public class SGUIControl : MonoBehaviour
 
         if (isLose)
         {
-            Invoke("GameLose", 1f);
+            Invoke("GameLose", 1.5f);
         }
     }
 
