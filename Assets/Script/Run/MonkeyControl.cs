@@ -15,6 +15,7 @@ public class MonkeyControl : MonoBehaviour
 
     public AudioSource BGM;
     public AudioClip jump, slide;
+    public GameObject effect;
 
     public static bool isGameOver;
     public static float score;
@@ -130,7 +131,8 @@ public class MonkeyControl : MonoBehaviour
         else 
         {
             anim.SetBool("Slip", true);
-            Invoke("GameEnd", 2f);
+            effect.SetActive(false);
+            Invoke("GameEnd", 1.5f);
         }
     }
 
