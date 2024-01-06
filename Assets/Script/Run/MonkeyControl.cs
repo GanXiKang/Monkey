@@ -145,7 +145,7 @@ public class MonkeyControl : MonoBehaviour
         switch (nowRoute)
         {
             case 1:
-                targetPos = new Vector3(-3, transform.position.y, transform.position.z);
+                targetPos = new Vector3(-5, transform.position.y, transform.position.z);
                 break;
 
             case 2:
@@ -153,7 +153,7 @@ public class MonkeyControl : MonoBehaviour
                 break;
 
             case 3:
-                targetPos = new Vector3(3, transform.position.y, transform.position.z);
+                targetPos = new Vector3(5, transform.position.y, transform.position.z);
                 break;
         }
     }
