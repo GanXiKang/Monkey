@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MonkeyControl : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class MonkeyControl : MonoBehaviour
     public AudioClip jump, slide;
 
     public static bool isGameOver;
+    public static float score;
 
     void Start()
     {
@@ -42,6 +44,9 @@ public class MonkeyControl : MonoBehaviour
     {
         if (!isGameOver)
         {
+            score += Time.deltaTime;
+            print(score);
+
             Vector3 moveDirection = new Vector3(0, verticalSpeed, speed);
             cc.Move(moveDirection * Time.deltaTime);
 
@@ -123,6 +128,11 @@ public class MonkeyControl : MonoBehaviour
                 }
             }
         }
+        else 
+        {
+            anim.SetBool("Slip", true);
+            Invoke("GameEnd", 2f);
+        }
     }
 
     void RoutePositionX()
@@ -149,5 +159,9 @@ public class MonkeyControl : MonoBehaviour
         isTransposition = false;
         isSlide = false;
         anim.SetBool("Slide", false);
+    }
+    void GameEnd()
+    {
+        SceneManager.LoadScene(5);
     }
 }
