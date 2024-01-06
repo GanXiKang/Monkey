@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class ObstaclesControl : MonoBehaviour
 {
-    public AudioSource BGM;
+    GameObject gameControl;
+    AudioSource BGM;
     public AudioClip coll;
+
+    void Start()
+    {
+        gameControl = GameObject.Find("GameControl");
+        BGM = gameControl.GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
