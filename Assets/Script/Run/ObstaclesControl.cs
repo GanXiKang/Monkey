@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ObstaclesControl : MonoBehaviour
 {
+    public AudioSource BGM;
+    public AudioClip coll;
+
     void Start()
     {
         
@@ -19,6 +22,7 @@ public class ObstaclesControl : MonoBehaviour
         if (other.tag == "Player")
         {
             MonkeyControl.isGameOver = true;
+            BGM.PlayOneShot(coll);
         }
     }
 }
