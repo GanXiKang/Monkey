@@ -13,6 +13,8 @@ public class RGUIControl : MonoBehaviour
 
     void Start()
     {
+        BGM = GetComponent<AudioSource>();
+
         main.SetActive(true);
         esc.SetActive(false);
     }
