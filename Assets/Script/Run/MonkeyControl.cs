@@ -49,6 +49,23 @@ public class MonkeyControl : MonoBehaviour
         {
             score += Time.deltaTime * 10;
 
+            if(score > 150)
+            {
+                speed = 12;
+                if (score > 320)
+                {
+                    speed = 15;
+                    if (score > 650)
+                    {
+                        speed = 18;
+                        if (score > 1000)
+                        {
+                            speed = 20;
+                        }
+                    }
+                }
+            }
+
             Vector3 moveDirection = new Vector3(0, verticalSpeed, speed);
             cc.Move(moveDirection * Time.deltaTime);
 
