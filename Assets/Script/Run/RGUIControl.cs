@@ -17,7 +17,7 @@ public class RGUIControl : MonoBehaviour
 
         main.SetActive(true);
         esc.SetActive(false);
-        Invoke("CloseTeach", 3f);
+        Invoke("CloseTeach", 5f);
     }
 
     void Update()
