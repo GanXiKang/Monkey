@@ -136,7 +136,7 @@ public class MonkeyControl : MonoBehaviour
         {
             anim.SetBool("Slip", true);
             effect.SetActive(false);
-            Invoke("GameEnd", 1.5f);
+            Invoke("GameEnd", 1.2f);
         }
     }
 
