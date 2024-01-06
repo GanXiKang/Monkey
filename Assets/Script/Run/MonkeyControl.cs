@@ -86,7 +86,7 @@ public class MonkeyControl : MonoBehaviour
             }
             if (isSlide)
             {
-                Invoke("Slide", 0.5f);
+                Invoke("Slide", 0.8f);
             }
 
             if (!isTransposition)
