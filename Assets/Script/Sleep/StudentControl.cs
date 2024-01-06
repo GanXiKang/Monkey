@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class StudentControl : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Animator anim;
+
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
+
+        anim.SetBool("Idle_Sitting", true);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
