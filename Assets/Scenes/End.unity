@@ -983,7 +983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   combo: {fileID: 1196136792}
-  score: {fileID: 204736038}
+  totalScore: {fileID: 204736038}
 --- !u!1 &1196136790
 GameObject:
   m_ObjectHideFlags: 0
