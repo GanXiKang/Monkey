@@ -15,6 +15,10 @@ public class TeacherControl : MonoBehaviour
 
     void Update()
     {
-        
+        if (SGUIControl.isLose)
+        {
+            anim.SetBool("T_IdleSitting", false);
+            anim.SetBool("T_Angry", true);
+        }
     }
 }
