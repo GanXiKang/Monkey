@@ -119,7 +119,7 @@ public class MonkeyControl : MonoBehaviour
                     anim.SetBool("Jump", true);
                     BGM.PlayOneShot(jump);
                 }
-                if (Input.GetKeyDown(KeyCode.S))
+                if (Input.GetKeyDown(KeyCode.P))
                 {
                     cc.height = 2f;
                     cc.center = Vector3.zero;
