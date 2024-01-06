@@ -21,7 +21,7 @@ public class FloorControl : MonoBehaviour
             if (colliderNum == 1)
             {
                 int s = Random.Range(0, 5);
-                Instantiate(map[s], transform.position + new Vector3(0, 0, -250), transform.rotation);
+                Instantiate(map[s], transform.position + new Vector3(0, 0, 140), transform.rotation);
             }
             else
             {
