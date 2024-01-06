@@ -12,6 +12,9 @@ public class MonkeyControl : MonoBehaviour
     float speed, speedTransposition, verticalSpeed, jumpForce, gravity;
     Vector3 targetPos;
 
+    public AudioSource BGM;
+    public AudioClip jump, slide;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -101,6 +104,7 @@ public class MonkeyControl : MonoBehaviour
                 isTransposition = true;
                 isJump = true;
                 anim.SetBool("Jump", true);
+                BGM.PlayOneShot(jump);
             }
             if (Input.GetKeyDown(KeyCode.S))
             {
@@ -109,6 +113,7 @@ public class MonkeyControl : MonoBehaviour
                 isTransposition = true;
                 isSlide = true;
                 anim.SetBool("Slide", true);
+                BGM.PlayOneShot(slide);
             }
         }
     }
