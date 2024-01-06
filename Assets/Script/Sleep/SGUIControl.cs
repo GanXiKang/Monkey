@@ -20,6 +20,8 @@ public class SGUIControl : MonoBehaviour
 
     void Start()
     {
+        BGM = GetComponent<AudioSource>();
+
         barScore = 3;
         isLose = false;
 
