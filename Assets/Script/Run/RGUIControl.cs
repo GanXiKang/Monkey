@@ -9,7 +9,7 @@ public class RGUIControl : MonoBehaviour
     AudioSource BGM;
 
     public AudioClip button;
-    public GameObject main, esc;
+    public GameObject main, esc, teach;
 
     void Start()
     {
@@ -17,6 +17,7 @@ public class RGUIControl : MonoBehaviour
 
         main.SetActive(true);
         esc.SetActive(false);
+        Invoke("CloseTeach", 3f);
     }
 
     void Update()
@@ -40,5 +41,10 @@ public class RGUIControl : MonoBehaviour
     {
         SceneManager.LoadScene(0);
         BGM.PlayOneShot(button);
+    }
+
+    void CloseTeach()
+    {
+        teach.SetActive(false);
     }
 }
