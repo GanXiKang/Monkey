@@ -15,6 +15,8 @@ public class MonkeyControl : MonoBehaviour
     public AudioSource BGM;
     public AudioClip jump, slide;
 
+    public static bool isGameOver;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -22,12 +24,14 @@ public class MonkeyControl : MonoBehaviour
 
         anim.SetBool("Run", true);
 
-        nowRoute = 2;
         isTransposition = false;
         isA = false;
         isD = false;
         isJump = false;
         isSlide = false;
+        isGameOver = false;
+
+        nowRoute = 2;
         speed = 10f;
         speedTransposition = 45f;
         jumpForce = 15f;
@@ -36,84 +40,87 @@ public class MonkeyControl : MonoBehaviour
 
     void Update()
     {
-        Vector3 moveDirection = new Vector3(0, verticalSpeed, speed);
-        cc.Move(moveDirection * Time.deltaTime);
+        if (!isGameOver)
+        {
+            Vector3 moveDirection = new Vector3(0, verticalSpeed, speed);
+            cc.Move(moveDirection * Time.deltaTime);
 
-        if (isA)
-        {
-            RoutePositionX();
-            transform.position = Vector3.Lerp(transform.position, targetPos, speedTransposition * Time.deltaTime);
-            if (Vector3.Distance(transform.position, targetPos) < 0.3f)
+            if (isA)
             {
-                isTransposition = false;
-                isA = false;
-                anim.SetBool("RunLeft", false);
-            }
-        }
-        if (isD)
-        {
-            RoutePositionX();
-            transform.position = Vector3.Lerp(transform.position, targetPos, speedTransposition * Time.deltaTime);
-            if (Vector3.Distance(transform.position, targetPos) < 0.3f)
-            {
-                isTransposition = false;
-                isD = false;
-                anim.SetBool("RunRight", false);
-            }
-        }
-        if (isJump)
-        {
-            verticalSpeed -= gravity * Time.deltaTime;
-            if (cc.isGrounded)
-            {
-                isTransposition = false;
-                isJump = false;
-                anim.SetBool("Jump", false);
-            }
-        }
-        if (isSlide)
-        {
-            Invoke("Slide", 0.5f);
-        }
-
-        if (!isTransposition)
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                if (nowRoute != 1)
+                RoutePositionX();
+                transform.position = Vector3.Lerp(transform.position, targetPos, speedTransposition * Time.deltaTime);
+                if (Vector3.Distance(transform.position, targetPos) < 0.3f)
                 {
-                    nowRoute--;
-                    isTransposition = true;
-                    isA = true;
-                    anim.SetBool("RunLeft", true);
+                    isTransposition = false;
+                    isA = false;
+                    anim.SetBool("RunLeft", false);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (isD)
             {
-                if (nowRoute != 3)
+                RoutePositionX();
+                transform.position = Vector3.Lerp(transform.position, targetPos, speedTransposition * Time.deltaTime);
+                if (Vector3.Distance(transform.position, targetPos) < 0.3f)
                 {
-                    nowRoute++;
-                    isTransposition = true;
-                    isD = true;
-                    anim.SetBool("RunRight", true);
+                    isTransposition = false;
+                    isD = false;
+                    anim.SetBool("RunRight", false);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (isJump)
             {
-                verticalSpeed = jumpForce;
-                isTransposition = true;
-                isJump = true;
-                anim.SetBool("Jump", true);
-                BGM.PlayOneShot(jump);
+                verticalSpeed -= gravity * Time.deltaTime;
+                if (cc.isGrounded)
+                {
+                    isTransposition = false;
+                    isJump = false;
+                    anim.SetBool("Jump", false);
+                }
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            if (isSlide)
             {
-                cc.height = 2f;
-                cc.center = Vector3.zero;
-                isTransposition = true;
-                isSlide = true;
-                anim.SetBool("Slide", true);
-                BGM.PlayOneShot(slide);
+                Invoke("Slide", 0.5f);
+            }
+
+            if (!isTransposition)
+            {
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    if (nowRoute != 1)
+                    {
+                        nowRoute--;
+                        isTransposition = true;
+                        isA = true;
+                        anim.SetBool("RunLeft", true);
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    if (nowRoute != 3)
+                    {
+                        nowRoute++;
+                        isTransposition = true;
+                        isD = true;
+                        anim.SetBool("RunRight", true);
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    verticalSpeed = jumpForce;
+                    isTransposition = true;
+                    isJump = true;
+                    anim.SetBool("Jump", true);
+                    BGM.PlayOneShot(jump);
+                }
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    cc.height = 2f;
+                    cc.center = Vector3.zero;
+                    isTransposition = true;
+                    isSlide = true;
+                    anim.SetBool("Slide", true);
+                    BGM.PlayOneShot(slide);
+                }
             }
         }
     }

@@ -18,7 +18,7 @@ public class ObstaclesControl : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            print("ok");
+            MonkeyControl.isGameOver = true;
         }
     }
 }
