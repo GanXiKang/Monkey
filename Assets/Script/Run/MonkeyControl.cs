@@ -124,7 +124,7 @@ public class MonkeyControl : MonoBehaviour
                     cc.height = 2f;
                     cc.center = Vector3.zero;
                     capC.height = 2f;
-                    capC.center = Vector3.zero;
+                    capC.center = new Vector3(0, 0, 0.5f);
                     isTransposition = true;
                     isSlide = true;
                     anim.SetBool("Slide", true);
@@ -162,7 +162,7 @@ public class MonkeyControl : MonoBehaviour
         cc.height = 4f;
         cc.center = new Vector3(0, 0.5f, 0);
         capC.height = 4f;
-        capC.center = new Vector3(0, 0.5f, 0);
+        capC.center = new Vector3(0, 0.5f, 0.5f);
         isTransposition = false;
         isSlide = false;
         anim.SetBool("Slide", false);
