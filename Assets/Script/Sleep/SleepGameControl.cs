@@ -94,6 +94,11 @@ public class SleepGameControl : MonoBehaviour
         {
             combo = trueNum;
         }
+
+        if (teacherAngry >= 3)
+        {
+            TeacherControl.isAngryEffects = true;
+        }
     }
 
     void RangeMode()
