@@ -56,6 +56,7 @@ public class SleepGameControl : MonoBehaviour
                                 trueNum = 0;
                                 SGUIControl.barScore -= 2;
                                 teacherAngry++;
+                                StudentControl.isFright = true;
                                 BGM.PlayOneShot(awake);
                             }
                         }
@@ -227,6 +228,7 @@ public class SleepGameControl : MonoBehaviour
         trueNum = 0;
         SGUIControl.barScore--;
         teacherAngry++;
+        StudentControl.isFright = true;
         BGM.PlayOneShot(miss);
     }
     void CloseKeyboard()
