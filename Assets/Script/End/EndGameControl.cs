@@ -6,12 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class EndGameControl : MonoBehaviour
 {
-    public Text combo, score;
+    public Text combo, totalScore;
+
+    int score;
 
     void Start()
     {
         combo.text = SleepGameControl.combo.ToString();
+
+        score = (int)Mathf.Round(MonkeyControl.score);
+        score += SleepGameControl.score;
+        totalScore.text = score.ToString();
     }
+
     void Update()
     {
         
