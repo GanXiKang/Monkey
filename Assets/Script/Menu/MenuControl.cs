@@ -153,7 +153,7 @@ public class MenuControl : MonoBehaviour
     }
     void test()
     {
-        EndGameControl.playNum = 2;
+        EndGameControl.playNum = 3;
         n[0] = "aaa";
         n[1] = "bbb";
         n[2] = "ccc";
