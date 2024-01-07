@@ -6,25 +6,29 @@ using UnityEngine.SceneManagement;
 
 public class EndGameControl : MonoBehaviour
 {
+    public static int playNum = 0;
+
     public InputField inputF;
     public Text combo, totalScore;
 
     int score;
-    string n;
 
     void Start()
     {
+        playNum++;
+
         combo.text = SleepGameControl.combo.ToString();
+        MenuControl.combo = SleepGameControl.combo;
 
         score = (int)Mathf.Round(MonkeyControl.score);
         score += SleepGameControl.score;
         totalScore.text = score.ToString();
+        MenuControl.score = score;
     }
 
     public void InputFieldControl()
     {
-        n = inputF.text;
-        print(n);
+        MenuControl.n = inputF.text;
     }
     public void Button_OK()
     {
