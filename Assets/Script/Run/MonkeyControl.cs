@@ -47,7 +47,7 @@ public class MonkeyControl : MonoBehaviour
     {
         if (!isGameOver)
         {
-            score += Time.deltaTime * 10;
+            score += Time.deltaTime * (SleepGameControl.teacherAngry / 5);
 
             if(score > 150)
             {
