@@ -17,7 +17,8 @@ public class MenuControl : MonoBehaviour
 
     public static bool isRanking = false;
     public static string[] n = new string[3];
-    public static int[] score, combo = new int[3];
+    public static int[] score = new int[3];
+    public static int[] combo = new int[3];
 
     Transform t;
 
