@@ -10,6 +10,7 @@ public class EndGameControl : MonoBehaviour
     public Text combo, totalScore;
 
     int score;
+    string n;
 
     void Start()
     {
@@ -20,11 +21,11 @@ public class EndGameControl : MonoBehaviour
         totalScore.text = score.ToString();
     }
 
-    void Update()
+    public void InputFieldControl()
     {
-        
+        n = inputF.text;
+        print(n);
     }
-
     public void Button_OK()
     {
         SceneManager.LoadScene(0);
