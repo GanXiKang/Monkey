@@ -10,7 +10,7 @@ public class MenuControl : MonoBehaviour
 
     public AudioClip button;
     public GameObject main, ranking, setting;
-    public GameObject[] top = new GameObject[3];
+    public RectTransform[] top = new RectTransform[3];
     public Text[] playerName = new Text[3];
     public Text[] playerScore = new Text[3];
     public Text[] playerCombo = new Text[3];
@@ -20,7 +20,7 @@ public class MenuControl : MonoBehaviour
     public static int[] score = new int[3];
     public static int[] combo = new int[3];
 
-    Transform t;
+    RectTransform t;
 
     void Start()
     {
@@ -77,9 +77,9 @@ public class MenuControl : MonoBehaviour
     {
         if (score[0] < score[1])
         {
-            t.position = top[0].transform.position;
-            top[0].transform.position = top[1].transform.position;
-            top[1].transform.position = t.position;
+            t.position = top[0].position;
+            top[0].position = top[1].position;
+            top[1].position = t.position;
         }
         if (EndGameControl.playNum == 3)
         {
