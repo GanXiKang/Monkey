@@ -19,6 +19,8 @@ public class MenuControl : MonoBehaviour
     public static string[] n = new string[3];
     public static int[] score, combo = new int[3];
 
+    Transform t;
+
     void Start()
     {
         BGM = GetComponent<AudioSource>();
@@ -51,6 +53,7 @@ public class MenuControl : MonoBehaviour
                 playerName[1].text = n[1].ToString();
                 playerScore[1].text = score[1].ToString() + " s";
                 playerCombo[1].text = combo[1].ToString() + " combo";
+                RankingTop();
                 break;
 
             case 3:
@@ -63,7 +66,33 @@ public class MenuControl : MonoBehaviour
                 playerName[2].text = n[2].ToString();
                 playerScore[2].text = score[2].ToString() + " s";
                 playerCombo[2].text = combo[3].ToString() + " combo";
+                RankingTop();
                 break;
+        }
+    }
+
+    void RankingTop()
+    {
+        if (score[0] < score[1])
+        {
+            t.position = top[0].transform.position;
+            top[0].transform.position = top[1].transform.position;
+            top[1].transform.position = t.position;
+        }
+        if (EndGameControl.playNum == 3)
+        {
+            if (score[0] < score[2])
+            {
+                t.position = top[0].transform.position;
+                top[0].transform.position = top[2].transform.position;
+                top[2].transform.position = t.position;
+            }
+            if (score[1] < score[2])
+            {
+                t.position = top[1].transform.position;
+                top[1].transform.position = top[2].transform.position;
+                top[2].transform.position = t.position;
+            }
         }
     }
 
