@@ -535,6 +535,18 @@ MonoBehaviour:
   - {fileID: 248824183}
   - {fileID: 1524062510}
   - {fileID: 1721721139}
+  playerName:
+  - {fileID: 2112596181}
+  - {fileID: 2141311622}
+  - {fileID: 789685480}
+  playerScore:
+  - {fileID: 716365727}
+  - {fileID: 262529}
+  - {fileID: 1393924596}
+  playerCombo:
+  - {fileID: 1510685137}
+  - {fileID: 505978782}
+  - {fileID: 1762584459}
 --- !u!82 &210623427
 AudioSource:
   m_ObjectHideFlags: 0
