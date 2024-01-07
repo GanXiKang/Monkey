@@ -193,9 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '800 s
-
-'
+  m_Text: 
 --- !u!222 &262530
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -533,6 +531,10 @@ MonoBehaviour:
   main: {fileID: 620946046}
   ranking: {fileID: 927150668}
   setting: {fileID: 1581709977}
+  top:
+  - {fileID: 248824183}
+  - {fileID: 1524062510}
+  - {fileID: 1721721139}
 --- !u!82 &210623427
 AudioSource:
   m_ObjectHideFlags: 0
@@ -729,7 +731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 248824184}
   m_Layer: 5
-  m_Name: Text1
+  m_Name: Top1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -971,7 +973,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20 Combo
+  m_Text: 
 --- !u!222 &505978783
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1385,9 +1387,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '1000 s
-
-'
+  m_Text: 
 --- !u!222 &716365728
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1466,7 +1466,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: gan
+  m_Text: 
 --- !u!222 &789685481
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2091,7 +2091,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 600 s
+  m_Text: 
 --- !u!222 &1393924597
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2509,7 +2509,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 25 Combo
+  m_Text: 
 --- !u!222 &1510685138
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2528,7 +2528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1524062511}
   m_Layer: 5
-  m_Name: Text2
+  m_Name: Top2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2839,7 +2839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1721721140}
   m_Layer: 5
-  m_Name: Text3
+  m_Name: Top3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2937,7 +2937,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 15 Combo
+  m_Text: 
 --- !u!222 &1762584460
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3166,7 +3166,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ganXk
+  m_Text: 
 --- !u!222 &2112596182
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3245,7 +3245,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ganX
+  m_Text: 
 --- !u!222 &2141311623
 CanvasRenderer:
   m_ObjectHideFlags: 0
