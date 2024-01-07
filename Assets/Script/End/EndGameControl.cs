@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EndGameControl : MonoBehaviour
 {
+    public InputField inputF;
     public Text combo, totalScore;
 
     int score;
