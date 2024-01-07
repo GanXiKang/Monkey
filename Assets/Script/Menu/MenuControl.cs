@@ -154,12 +154,15 @@ public class MenuControl : MonoBehaviour
     void test()
     {
         EndGameControl.playNum = 2;
-        n[0] = "11111";
-        n[1] = "22222";
-        score[0] = 100;
+        n[0] = "aaa";
+        n[1] = "bbb";
+        n[3] = "ccc";
+        score[0] = 130;
         score[1] = 120;
+        score[2] = 110;
         combo[0] = 10;
         combo[1] = 30;
+        combo[2] = 20;
     }
 
     public void Button_Start()
