@@ -2935,6 +2935,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 340838453497057248, guid: 372ba6c3a9320d34296140752719008d, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 340838453497057248, guid: 372ba6c3a9320d34296140752719008d, type: 3}
       propertyPath: m_AABB.m_Center.z
       value: -0.012625445
       objectReference: {fileID: 0}
