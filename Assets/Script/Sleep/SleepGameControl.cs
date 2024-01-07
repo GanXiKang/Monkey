@@ -7,14 +7,14 @@ public class SleepGameControl : MonoBehaviour
 {
     AudioSource BGM;
 
-    public static int score, combo;
+    public static int score, combo, teacherAngry;
     public static float gameTime;
 
     public GameObject[] keyb = new GameObject[9];
     public GameObject[] comment = new GameObject[6];
     public AudioClip correct, miss, angry, awake;
 
-    int mode, trueNum, teacherAngry;
+    int mode, trueNum;
     bool isBingo, isEnd;
     float timer;
 
