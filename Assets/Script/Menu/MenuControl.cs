@@ -10,6 +10,7 @@ public class MenuControl : MonoBehaviour
 
     public AudioClip button;
     public GameObject main, ranking, setting;
+    public GameObject[] top = new GameObject[3];
 
     public static bool isRanking = false;
 
