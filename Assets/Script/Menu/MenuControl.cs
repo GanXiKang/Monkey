@@ -24,6 +24,7 @@ public class MenuControl : MonoBehaviour
 
     void Start()
     {
+        test();
         BGM = GetComponent<AudioSource>();
 
         if (!isRanking)
@@ -95,6 +96,16 @@ public class MenuControl : MonoBehaviour
                 top[2].transform.position = t.position;
             }
         }
+    }
+    void test()
+    {
+        EndGameControl.playNum = 2;
+        n[0] = "11111";
+        n[1] = "22222";
+        score[0] = 100;
+        score[1] = 120;
+        combo[0] = 10;
+        combo[1] = 30;
     }
 
     public void Button_Start()
