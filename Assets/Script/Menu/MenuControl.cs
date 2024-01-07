@@ -84,7 +84,7 @@ public class MenuControl : MonoBehaviour
                             playerCombo[1].text = combo[1].ToString() + " combo";
                             playerName[2].text = n[2].ToString();
                             playerScore[2].text = score[2].ToString() + " s";
-                            playerCombo[2].text = combo[3].ToString() + " combo";
+                            playerCombo[2].text = combo[2].ToString() + " combo";
                         }
                         else
                         {
@@ -123,7 +123,7 @@ public class MenuControl : MonoBehaviour
                             playerCombo[1].text = combo[0].ToString() + " combo";
                             playerName[2].text = n[2].ToString();
                             playerScore[2].text = score[2].ToString() + " s";
-                            playerCombo[2].text = combo[3].ToString() + " combo";
+                            playerCombo[2].text = combo[2].ToString() + " combo";
                         }
                         else
                         {
