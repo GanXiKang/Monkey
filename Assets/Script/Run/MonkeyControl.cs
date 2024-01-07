@@ -10,13 +10,13 @@ public class MonkeyControl : MonoBehaviour
     CapsuleCollider capC;
 
     int nowRoute;
-    bool isTransposition, isA, isD, isJump, isSlide;
+    bool isTransposition, isA, isD, isJump, isSlide, isEff;
     float speed, speedTransposition, verticalSpeed, jumpForce, gravity;
     Vector3 targetPos;
 
     public AudioSource BGM;
     public AudioClip jump, slide;
-    public GameObject effect;
+    public GameObject effect, effPoint, boom;
 
     public static bool isGameOver;
     public static float score;
@@ -35,6 +35,7 @@ public class MonkeyControl : MonoBehaviour
         isJump = false;
         isSlide = false;
         isGameOver = false;
+        isEff = false;
 
         nowRoute = 2;
         speed = 10f;
@@ -151,6 +152,11 @@ public class MonkeyControl : MonoBehaviour
         }
         else 
         {
+            if (!isEff)
+            {
+                Instantiate(boom, effPoint.transform.position, effPoint.transform.rotation);
+                isEff = true;
+            }
             anim.SetBool("Slip", true);
             effect.SetActive(false);
             Invoke("GameEnd", 1.2f);
