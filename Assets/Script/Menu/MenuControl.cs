@@ -156,7 +156,7 @@ public class MenuControl : MonoBehaviour
         EndGameControl.playNum = 2;
         n[0] = "aaa";
         n[1] = "bbb";
-        n[3] = "ccc";
+        n[2] = "ccc";
         score[0] = 130;
         score[1] = 120;
         score[2] = 110;
