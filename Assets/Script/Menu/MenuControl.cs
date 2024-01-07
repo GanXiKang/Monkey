@@ -20,7 +20,7 @@ public class MenuControl : MonoBehaviour
     public static int[] score = new int[3];
     public static int[] combo = new int[3];
 
-    RectTransform t;
+    Vector3 t;
 
     void Start()
     {
@@ -77,35 +77,35 @@ public class MenuControl : MonoBehaviour
     {
         if (score[0] < score[1])
         {
-            t.position = top[0].position;
+            t = top[0].position;
             top[0].position = top[1].position;
-            top[1].position = t.position;
+            top[1].position = t;
         }
         if (EndGameControl.playNum == 3)
         {
             if (score[0] < score[2])
             {
-                t.position = top[0].transform.position;
+                t = top[0].transform.position;
                 top[0].transform.position = top[2].transform.position;
-                top[2].transform.position = t.position;
+                top[2].transform.position = t;
             }
             if (score[1] < score[2])
             {
-                t.position = top[1].transform.position;
+                t = top[1].transform.position;
                 top[1].transform.position = top[2].transform.position;
-                top[2].transform.position = t.position;
+                top[2].transform.position = t;
             }
         }
     }
     void test()
     {
-        EndGameControl.playNum = 2;
-        n[0] = "11111";
-        n[1] = "22222";
-        score[0] = 100;
-        score[1] = 120;
-        combo[0] = 10;
-        combo[1] = 30;
+        //EndGameControl.playNum = 2;
+        //n[0] = "11111";
+        //n[1] = "22222";
+        //score[0] = 100;
+        //score[1] = 120;
+        //combo[0] = 10;
+        //combo[1] = 30;
     }
 
     public void Button_Start()
