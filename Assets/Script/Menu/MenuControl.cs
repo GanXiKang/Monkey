@@ -16,8 +16,8 @@ public class MenuControl : MonoBehaviour
     public Text[] playerCombo = new Text[3];
 
     public static bool isRanking = false;
-    public static string n;
-    public static int score, combo;
+    public static string[] n = new string[3];
+    public static int[] score, combo = new int[3];
 
     void Start()
     {
@@ -39,21 +39,30 @@ public class MenuControl : MonoBehaviour
         switch (EndGameControl.playNum)
         {
             case 1:
-                playerName[0].text = n.ToString();
-                playerScore[0].text = score.ToString();
-                playerCombo[0].text = combo.ToString();
+                playerName[0].text = n[0].ToString();
+                playerScore[0].text = score[0].ToString() + " s";
+                playerCombo[0].text = combo[0].ToString() + " combo";
                 break;
 
             case 2:
-                playerName[1].text = n.ToString();
-                playerScore[1].text = score.ToString();
-                playerCombo[1].text = combo.ToString();
+                playerName[0].text = n[0].ToString();
+                playerScore[0].text = score[0].ToString() + " s";
+                playerCombo[0].text = combo[0].ToString() + " combo";
+                playerName[1].text = n[1].ToString();
+                playerScore[1].text = score[1].ToString() + " s";
+                playerCombo[1].text = combo[1].ToString() + " combo";
                 break;
 
             case 3:
-                playerName[2].text = n.ToString();
-                playerScore[2].text = score.ToString();
-                playerCombo[2].text = combo.ToString();
+                playerName[0].text = n[0].ToString();
+                playerScore[0].text = score[0].ToString() + " s";
+                playerCombo[0].text = combo[0].ToString() + " combo";
+                playerName[1].text = n[1].ToString();
+                playerScore[1].text = score[1].ToString() + " s";
+                playerCombo[1].text = combo[1].ToString() + " combo";
+                playerName[2].text = n[2].ToString();
+                playerScore[2].text = score[2].ToString() + " s";
+                playerCombo[2].text = combo[3].ToString() + " combo";
                 break;
         }
     }
