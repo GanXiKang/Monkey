@@ -20,7 +20,7 @@ public class MenuControl : MonoBehaviour
     public static int[] score = new int[3];
     public static int[] combo = new int[3];
 
-    Vector3 t;
+    RectTransform t;
 
     void Start()
     {
@@ -49,63 +49,117 @@ public class MenuControl : MonoBehaviour
                 break;
 
             case 2:
-                playerName[0].text = n[0].ToString();
-                playerScore[0].text = score[0].ToString() + " s";
-                playerCombo[0].text = combo[0].ToString() + " combo";
-                playerName[1].text = n[1].ToString();
-                playerScore[1].text = score[1].ToString() + " s";
-                playerCombo[1].text = combo[1].ToString() + " combo";
-                RankingTop();
+                if (score[0] > score[1])
+                {
+                    playerName[0].text = n[0].ToString();
+                    playerScore[0].text = score[0].ToString() + " s";
+                    playerCombo[0].text = combo[0].ToString() + " combo";
+                    playerName[1].text = n[1].ToString();
+                    playerScore[1].text = score[1].ToString() + " s";
+                    playerCombo[1].text = combo[1].ToString() + " combo";
+                }
+                else
+                {
+                    playerName[0].text = n[1].ToString();
+                    playerScore[0].text = score[1].ToString() + " s";
+                    playerCombo[0].text = combo[1].ToString() + " combo";
+                    playerName[1].text = n[0].ToString();
+                    playerScore[1].text = score[0].ToString() + " s";
+                    playerCombo[1].text = combo[0].ToString() + " combo";
+                }
                 break;
 
             case 3:
-                playerName[0].text = n[0].ToString();
-                playerScore[0].text = score[0].ToString() + " s";
-                playerCombo[0].text = combo[0].ToString() + " combo";
-                playerName[1].text = n[1].ToString();
-                playerScore[1].text = score[1].ToString() + " s";
-                playerCombo[1].text = combo[1].ToString() + " combo";
-                playerName[2].text = n[2].ToString();
-                playerScore[2].text = score[2].ToString() + " s";
-                playerCombo[2].text = combo[3].ToString() + " combo";
-                RankingTop();
+                if (score[0] > score[1])
+                {
+                    if (score[0] > score[2])
+                    {
+                        playerName[0].text = n[0].ToString();
+                        playerScore[0].text = score[0].ToString() + " s";
+                        playerCombo[0].text = combo[0].ToString() + " combo";
+                        if (score[1] > score[2])
+                        {
+                            playerName[1].text = n[1].ToString();
+                            playerScore[1].text = score[1].ToString() + " s";
+                            playerCombo[1].text = combo[1].ToString() + " combo";
+                            playerName[2].text = n[2].ToString();
+                            playerScore[2].text = score[2].ToString() + " s";
+                            playerCombo[2].text = combo[3].ToString() + " combo";
+                        }
+                        else
+                        {
+                            playerName[1].text = n[2].ToString();
+                            playerScore[1].text = score[2].ToString() + " s";
+                            playerCombo[1].text = combo[2].ToString() + " combo";
+                            playerName[2].text = n[1].ToString();
+                            playerScore[2].text = score[1].ToString() + " s";
+                            playerCombo[2].text = combo[1].ToString() + " combo";
+                        }
+                    }
+                    else
+                    {
+                        playerName[0].text = n[2].ToString();
+                        playerScore[0].text = score[2].ToString() + " s";
+                        playerCombo[0].text = combo[2].ToString() + " combo";
+                        playerName[1].text = n[0].ToString();
+                        playerScore[1].text = score[0].ToString() + " s";
+                        playerCombo[1].text = combo[0].ToString() + " combo";
+                        playerName[2].text = n[1].ToString();
+                        playerScore[2].text = score[1].ToString() + " s";
+                        playerCombo[2].text = combo[1].ToString() + " combo";
+                    }
+                }
+                else
+                {
+                    if (score[1] > score[2])
+                    {
+                        playerName[0].text = n[1].ToString();
+                        playerScore[0].text = score[1].ToString() + " s";
+                        playerCombo[0].text = combo[1].ToString() + " combo";
+                        if (score[0] > score[2])
+                        {
+                            playerName[1].text = n[0].ToString();
+                            playerScore[1].text = score[0].ToString() + " s";
+                            playerCombo[1].text = combo[0].ToString() + " combo";
+                            playerName[2].text = n[2].ToString();
+                            playerScore[2].text = score[2].ToString() + " s";
+                            playerCombo[2].text = combo[3].ToString() + " combo";
+                        }
+                        else
+                        {
+                            playerName[1].text = n[2].ToString();
+                            playerScore[1].text = score[2].ToString() + " s";
+                            playerCombo[1].text = combo[2].ToString() + " combo";
+                            playerName[2].text = n[0].ToString();
+                            playerScore[2].text = score[0].ToString() + " s";
+                            playerCombo[2].text = combo[0].ToString() + " combo";
+                        }
+                    }
+                    else
+                    {
+                        playerName[0].text = n[2].ToString();
+                        playerScore[0].text = score[2].ToString() + " s";
+                        playerCombo[0].text = combo[2].ToString() + " combo";
+                        playerName[1].text = n[1].ToString();
+                        playerScore[1].text = score[1].ToString() + " s";
+                        playerCombo[1].text = combo[1].ToString() + " combo";
+                        playerName[2].text = n[0].ToString();
+                        playerScore[2].text = score[0].ToString() + " s";
+                        playerCombo[2].text = combo[0].ToString() + " combo";
+                    }
+                }
                 break;
-        }
-    }
-
-    void RankingTop()
-    {
-        if (score[0] < score[1])
-        {
-            t = top[0].position;
-            top[0].position = top[1].position;
-            top[1].position = t;
-        }
-        if (EndGameControl.playNum == 3)
-        {
-            if (score[0] < score[2])
-            {
-                t = top[0].transform.position;
-                top[0].transform.position = top[2].transform.position;
-                top[2].transform.position = t;
-            }
-            if (score[1] < score[2])
-            {
-                t = top[1].transform.position;
-                top[1].transform.position = top[2].transform.position;
-                top[2].transform.position = t;
-            }
         }
     }
     void test()
     {
-        //EndGameControl.playNum = 2;
-        //n[0] = "11111";
-        //n[1] = "22222";
-        //score[0] = 100;
-        //score[1] = 120;
-        //combo[0] = 10;
-        //combo[1] = 30;
+        EndGameControl.playNum = 2;
+        n[0] = "11111";
+        n[1] = "22222";
+        score[0] = 100;
+        score[1] = 120;
+        combo[0] = 10;
+        combo[1] = 30;
     }
 
     public void Button_Start()
