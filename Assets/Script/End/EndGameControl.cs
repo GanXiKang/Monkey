@@ -18,17 +18,56 @@ public class EndGameControl : MonoBehaviour
         playNum++;
 
         combo.text = SleepGameControl.combo.ToString();
-        MenuControl.combo = SleepGameControl.combo;
+        switch (playNum)
+        {
+            case 1:
+                MenuControl.combo[0] = SleepGameControl.combo;
+                break;
+
+            case 2:
+                MenuControl.combo[1] = SleepGameControl.combo;
+                break;
+
+            case 3:
+                MenuControl.combo[2] = SleepGameControl.combo;
+                break;
+        }
 
         score = (int)Mathf.Round(MonkeyControl.score);
         score += SleepGameControl.score;
         totalScore.text = score.ToString();
-        MenuControl.score = score;
+        switch (playNum)
+        {
+            case 1:
+                MenuControl.score[0] = score;
+                break;
+
+            case 2:
+                MenuControl.score[1] = score;
+                break;
+
+            case 3:
+                MenuControl.score[2] = score;
+                break;
+        }
     }
 
     public void InputFieldControl()
     {
-        MenuControl.n = inputF.text;
+        switch (playNum)
+        {
+            case 1:
+                MenuControl.n[0] = inputF.text;
+                break;
+
+            case 2:
+                MenuControl.n[1] = inputF.text;
+                break;
+
+            case 3:
+                MenuControl.n[2] = inputF.text;
+                break;
+        }
     }
     public void Button_OK()
     {
